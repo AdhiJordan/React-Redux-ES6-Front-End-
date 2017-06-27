@@ -1,7 +1,0 @@
-@charset 'utf-8';
-@import '../../../node_modules/basscss/css/basscss.css';
-
-
-.textCartName {
-	font-size: 20px;
-}

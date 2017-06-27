@@ -1,0 +1,1 @@
+export const CREATE_USER_SUCCESS = 'main/CREATE_USER_SUCCESS';

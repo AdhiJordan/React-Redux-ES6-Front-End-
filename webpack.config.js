@@ -1,3 +1,12 @@
+var path = require('path');
+
+var webpack = require('webpack');
+
+
+
+
+var CSS_LOADER = "style!css!postcss",
+    SCSS_LOADER = "style!css!postcss?minimize!sass-loader";
 module.exports = {
   entry: [
     './src/index.js'
@@ -8,16 +17,20 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    loaders: [
+     { test: /\.css$/,
+      loader: CSS_LOADER
+     },
+     {
+        test: /\.scss$/,
+        loader: SCSS_LOADER
+      },
+    {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
         presets: ['react', 'es2015', 'stage-1']
-      },
-         {
-   test: /\.css$/,
-   loaders: ['to-string-loader', 'css-loader']
- }
+      }
     }]
   },
 
