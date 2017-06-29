@@ -1,8 +1,9 @@
 import update from 'react-addons-update'
-import * as types from './actionTypesCustomer';
+
 import thunk from 'redux-thunk';
 import fetch from 'isomorphic-fetch';
 
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
 const initialState = {
   registerUsers: []
 
@@ -11,10 +12,12 @@ const initialState = {
 // Action Creators
 
 
-export function createUserSuccess(newdata) {
-   // alert("create");
+export function createUserSuccess(newData) {
+   alert("create");
 
-  return { type: types.CREATE_USER_SUCCESS, payload: newdata };
+  return { type: types.CREATE_USER_SUCCESS, payload: newData };
+
+console.log(newdata);
 }
 
 // export function updateCustomerSuccess(entityId, entity) {
@@ -53,30 +56,68 @@ export function createUserSuccess(newdata) {
 //       dispatch(loadCustomerSuccess(entity)); })
 //   };
 // }
+export function createUser(newData) {
+// return function(dispatch) {
+//   dispatch(createUserSuccess(newData));
+// }
+alert('hai')
+  return (dispatch) => {
 
-export function createUser(userData) {
-   alert("in customer");
-   console.log(userData);
-    return function(dispatch, getState) {
-    // dispatch(beginAjaxCall());
-    console.log(getState())
-    return fetch('http://localhost:1337/customersegments', {
-            method: 'post',
-                      headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(customerData)
-      
-    }).then(r=>(r.json()))
-    .then(newdata => {
-      // alert(entity)
-    alert(JSON.stringify(newdata))      
-    // console.log(entity)
-      dispatch(createCustomerSuccess(newdata)); })
+   
+      dispatch ({
+         type: types.CREATE_USER_SUCCESS,
+         payload: newData
+      })
   };
-
 }
+// export function createUser(userData) {
+   
+//     return => (dispatch) {
+//     // dispatch(beginAjaxCall());
+//     alert('hai')
+//     // console.log(getState())
+//     // return fetch({
+//     //         body: JSON.stringify(userData)
+      
+//     // }).then(r=>(r.json()))
+//     // .then(newdata => {
+//     //   // alert(entity)
+//     // alert(JSON.stringify(newdata))      
+//     // // console.log(entity)
+//       dispatch(createEntitySuccess(newdata)); 
+//   };
+
+// }
+// export function createUser(userData) {
+  
+//    console.log(userData);
+//    console.log(userData);
+//     return function(dispatch) {
+      
+      
+//     // dispatch(beginAjaxCall());
+//     //  alert("in customer");
+//     // console.log(getState());
+//     // return fetch('http://localhost:1337/customersegments', {
+//     //         method: 'post',
+//     //                   headers: {
+//     //             'Accept': 'application/json',
+//     //             'Content-Type': 'application/json'
+//     //         },
+//     //         body: JSON.stringify(customerData)
+      
+//     // })
+//      // .then(r=>(r.json()))
+//         }
+//     .then(newdata =>
+//      {
+//       alert(entity)
+//     alert(JSON.stringify(newdata)) 
+//     dispatch(createCustomerSuccess(newdata));     
+//    });
+      
+
+//   }
 
 // export function updateCustomer(id, editedCustomerData, indexOfEntityToUpdate) {
 //   alert('edited customer data');
@@ -134,8 +175,9 @@ export default function reducer(state = initialState, action) {
         //    ...state,
         //    Object.assign({}, payload)
         // ];
+        alert('hai');
         return update(state, { registerUsers: { $push: [payload] }  });
-
+        
 
 
     // case types.UPDATE_CUSTOMER_SUCCESS:

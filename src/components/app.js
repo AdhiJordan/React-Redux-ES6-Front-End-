@@ -9,7 +9,7 @@ import TodoList from './TodoList.js'
 import TodoApi from '../Api/TodoApi.js'
 import uuid from 'node-uuid'
 import {createSelector} from 'reselect'
-import {bindDispatch} from 'common/util/redux'
+import {bindDispatch} from '../common/util/redux'
 import { browserHistory } from 'react-router';
 
 
@@ -38,8 +38,6 @@ import { browserHistory } from 'react-router';
         persons: [
         ...this.state.persons,
         {
-
-          text: "hai sample text",
           persons: newArr
         }
 
@@ -48,8 +46,12 @@ import { browserHistory } from 'react-router';
 
 
        });
+
+      let newData = {
+        user: this.state.persons
+      }
+      this.props.actions.createUser(newData);
       
-      console.log(this.state.persons);
       
       }
 

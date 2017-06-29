@@ -8,7 +8,7 @@ export * from './mainRegister'
 
 
 export default combineReducers({
- 	main,
- 	customer,
+ 	persons,
+ 	
  	routing
  })
