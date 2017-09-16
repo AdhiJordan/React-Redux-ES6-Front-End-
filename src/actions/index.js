@@ -1,14 +1,26 @@
-// Set up your root reducer here...
-import { combineReducers } from 'redux';
-import {routerReducer as routing} from 'react-router-redux'
-import persons from './mainRegister'
 
+export const GET_TODO_DATA = 'GET_TODO_DATA ';
 
-export * from './mainRegister'
+let nextTodoId = 0
+export const addTodo = text => {
+alert("working");
+  return {
+    type: 'ADD_TODO',
+    id: nextTodoId++,
+    text
+  }
+}
 
+// export const setVisibilityFilter = filter => {
+//   return {
+//     type: 'SET_VISIBILITY_FILTER',
+//     filter
+//   }
+// }
 
-export default combineReducers({
- 	persons,
- 	
- 	routing
- })
+// export const toggleTodo = id => {
+//   return {
+//     type: 'TOGGLE_TODO',
+//     id
+//   }
+// }

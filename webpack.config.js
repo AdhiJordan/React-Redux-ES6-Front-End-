@@ -7,6 +7,7 @@ var webpack = require('webpack');
 
 var CSS_LOADER = "style!css!postcss",
     SCSS_LOADER = "style!css!postcss?minimize!sass-loader";
+    
 module.exports = {
   entry: [
     './src/index.js'

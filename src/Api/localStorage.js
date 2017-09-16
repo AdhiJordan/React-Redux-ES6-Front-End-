@@ -1,11 +1,12 @@
-export const loadState = () => {
-	try {
-		const serializedState = localStorage.getItem('state');
-		if(serializedState === null) {
-			return undefined;
-		}
-		return JSON.parse(serializedState);
-	} catch (err) {
-		return undefined;
-	}
+import axios from 'axios'
+
+class MessageApi {
+  static newMessage(message) {
+  let parsed = JSON.parse(message.newMessage.message)
+     return axios.post('/messages', parsed)
+  }
+
+
 }
+
+export default MessageApi

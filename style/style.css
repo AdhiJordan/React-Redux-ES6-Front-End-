@@ -1,6 +1,7 @@
+
 @charset 'utf-8';
 @import '../../../node_modules/basscss/css/basscss.css';
-
+@import '../style/w3.css';
 
 .textCartName {
 	font-size: 20px;
@@ -21,3 +22,47 @@
     margin-left: 430px;
     padding: 30px 30px;
 }
+
+.addingDesign{
+    background: #d3d3d3;
+}
+.chatContent {
+        border: 2px solid #000000;
+        height: 700px;
+         width: 100%;
+}
+.chatUserContent {
+    width: 100%;
+    height: 656px;
+    border: 1px solid #d3d3d3;
+}
+.chatSecondContent {
+    height: 600px;
+    width: 100%;
+     border: 1px solid #d3d3d3;
+}
+.inputDesign{
+    color: black;
+    width: 96%;
+}
+
+.messageEnvelope {
+    margin-left: 0px;
+}
+.buttonAlign {
+    float: right;
+    right: 0px;
+    width: 8%;
+}
+/*.inputAlign{
+    width: 93.4%;
+}*/
+
+
+
+
+
+
+
+
+
